@@ -1,2 +1,4 @@
 # Hipchat
-Hipchay Management from PowerShell
+Hipchat Management from PowerShell
+
+Uses the SavedCredentials module authored by @mklement0
