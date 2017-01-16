@@ -33,7 +33,7 @@
         # Check Rate Limit Remaining
         $UserID  = 'administrator@company.com'
         $uri = "https://hipchat.company.com/v2/user/" + $UserID
-        $webResponse = Invoke-WebRequest -Uri $uri -Headers $headers
+        $webResponse = Invoke-WebRequest -Uri $uri -Headers $headers -UseBasicParsing
         Return $($webResponse.Headers.'X-Ratelimit-Remaining')
         Write-Verbose "Status Code: $($webResponse.StatusCode)"
         Write-Verbose "Status Description: $($webResponse.Description)"
