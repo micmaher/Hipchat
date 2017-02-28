@@ -1,4 +1,4 @@
-﻿function Get-RateLimit{
+function Get-RateLimit{
 
 <#
 	.SYNOPSIS
@@ -17,6 +17,10 @@
 
 	[CmdletBinding()]
 	param()
+
+	# Hipchat 2.2.0 requires TLS
+        $AllProtocols = [System.Net.SecurityProtocolType]'Ssl3,Tls,Tls11,Tls12'
+        [System.Net.ServicePointManager]::SecurityProtocol = $AllProtocols
 
         Write-Verbose "Decrypt the password"
         $kHipchatPassEncrypt = (Get-SavedCredential 'HipChatAdmin' -Context 'Hipchat') 
